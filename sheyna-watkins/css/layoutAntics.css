@@ -1,0 +1,196 @@
+/* LAYOUT */
+
+.exterior {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: stretch;
+  margin: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+.backgroundBlock { /* box holding color or image */
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  margin: 0px;
+}
+header {
+  align-self: flex-start;
+  flex-grown: 1;
+}
+.backgroundBlock--image1 {
+  background-image: url('../images/house.jpg');
+  background-color: #cbd1dd;
+  flex-basis: 550px;
+  flex-grown: 1;
+}
+.middle {
+  flex-basis: 1270px;
+  flex-grown: 4;
+}
+.backgroundBlock--image2 {
+  background-image: url('../images/tower.jpg');
+  background-color: #f6f4a6;
+  flex-basis: 550px;
+  flex-grown: 1;
+}
+footer {
+  flex-grown: 1;
+  flex-basis: 150px;
+}
+.contentBox { /* box holding text */
+  padding: 40px 30px 30px 50px;
+  z-index: 1;
+  position: absolute;
+  margin-bottom: 50px;
+}
+.color1 {
+  background-color: #265944; /* dark green */
+}
+.color2 {
+  background-color: #bcc6ac; /* light green */
+}
+
+
+/* MODULE */
+
+/* Headings */
+
+h1 {
+  font-family: 'vollkornbold', Georgia, serif;
+  font-size: 10em;
+  color: #e9e5d7; /* light yellow */
+  display: inline-block;
+}
+h2 {
+  font-family: 'vollkornitalic', Georgia, serif;
+  font-weight: normal;
+  font-size: 2.5em; /* 30pt; */
+  color: #bcc6ac; /* light green */
+  display: inline-block;
+}
+.h1--title {
+  margin: 0.05em 0em 0em 0em;
+}
+.h2--prehead {
+  margin: 1.3em 0em 0em 2.9em;
+  white-space: nowrap;
+}
+.h2--subhead {
+  margin: 0.3em 0em 1.3em 7.2em;
+  white-space: nowrap;
+}
+
+
+/* Body text styles */
+
+p {
+  font-family: 'vollkornregular', Georgia, serif;
+  font-size: 1.34em; /* 16pt; */
+  line-height: 1.25em; /* 20pt; */
+  padding-bottom: 0.2em; /* 4px */
+  color: #4c4736; /* dark brown */
+}
+article p:first-child:first-letter {
+  float: left;
+  color: #265944; /* dark green */
+  padding: 0.15em 0em 0.1em 0.10em;  /* 30px, 0, 0, 20px */
+  font-family: 'vollkornregular', Georgia, serif;
+  font-size: 2.9em; /* 120pt; */
+  line-height: 0.4em; /* 60px; */
+  margin-left: -0.3em; /* -50px; */
+}
+.p--extraTopPadding {
+  padding-top: 0.5em; /* 15px */
+}
+.p--footer {
+  font-size: 0.8em; /* 10pt */
+  text-align: center;
+  bottom: 2.5em; /* 50px; */
+  margin-top: 6em; /* 100px */
+  color: #bcc6ac; /* light green */
+}
+.p--floatRight {
+  float: right;
+  text-align: right;
+  margin-right: 0.5em; /* 10px; */
+  margin-top: 10px; /* must match "arrowRight" */
+}
+.p--indent {
+  text-indent: 1em; /* 28px; */
+}
+.p__lead-in {
+  color: #265944; /* dark green */
+  font-variant: small-caps;
+  font-size: 2.6em; /* 40pt; */
+}
+.p__lead-in--hangingIndent {
+  margin-left: -0.3em; /* -10px; */
+  font-size: 1.9em;  /* 30pt; */
+}
+.a--nextPage { /* text link for next part */
+  color: #265944; /* dark green */
+  text-transform: uppercase;
+  font-size: 1.1em; /* 18pt; */
+  text-decoration: none;
+  letter-spacing: -0.1em; /* -2px; */
+}
+
+
+/* GRAPHICAL ELEMENTS */
+
+.arrowRight { /* arrow shape */
+  float: right;
+  margin-right: 20px;
+  margin-top: 10px; /* must match "p--floatRight" */
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #265944;
+  display: inline-block;
+}
+.mosaicWrapper { /* window wrapper */
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 150px;
+}
+.mosaicWrapper .mosaicWrapper__panel { /* windowpanes */
+  height: 200px;
+  float: left;
+  display: inline-block;
+  z-index: 1;
+}
+.mosaicWrapper .mosaicWrapper__panel--image3 { /* picture in window */
+  background: url('../images/gardenbed.jpg') 0px -30px no-repeat fixed;
+}
+
+
+/* STATE */
+
+.is-hidden {
+  visibility: hidden;
+}
+a:hover {
+  color: #898474; /* brown */
+}
+
+@media only screen and (max-width: 959px) {
+  .middle {
+    flex-basis: 1830px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .middle {
+    flex-basis: 2400px;
+  }
+}
